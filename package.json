@@ -8,7 +8,7 @@
     "start": "node dist/index.js",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon dist/index.js\" ",
     "test": "jest",
-    "serve": "npm run test && cd coverage/lcov-report && npx serve"
+    "serve:couverage": "npm run test && cd coverage/lcov-report && npx serve"
   },
   "repository": {
     "type": "git",
