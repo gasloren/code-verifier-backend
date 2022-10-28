@@ -11,7 +11,6 @@ const port: string | number = process.env.PORT || 8000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-
 // GET root
 app.get('/', (req: Request, res: Response) => {
   res.status(200).json({
