@@ -19,6 +19,9 @@ NodeJS Backend Server
 - **@types/node** - typescript definitions for node
 - **@types/jest** - typescript definitions for jest
 - **supertest** - A library for making http requests tests
+- **cors** - Allow incomming requests from external domains
+- **helmet** - Security setting for Headers response
+- **mongoose** - object modeling for intereact with MongoDB
 
 ### Package.json Scripts
 
