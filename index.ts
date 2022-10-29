@@ -11,7 +11,6 @@ dotenv.config();
 // PORT
 const port = process.env.PORT || 8000;
 
-
 // Execute SERVER
 server.listen(port, () => {
   LogSuccess(`[SERVER ON]: Running on http://localhost:${port}/api`)

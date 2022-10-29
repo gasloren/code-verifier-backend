@@ -10,6 +10,9 @@ import router from '../routes';
 // * Create express application
 const server: Express = express();
 
+// Static Server
+server.use(express.static('public'));
+
 // http://localhost:8000/api...
 server.use('/api', router);
 
