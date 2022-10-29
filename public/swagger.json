@@ -34,7 +34,7 @@
 	},
 	"openapi": "3.0.0",
 	"paths": {
-		"/api/hello/hello": {
+		"/api/hello": {
 			"get": {
 				"operationId": "GetMessage",
 				"responses": {

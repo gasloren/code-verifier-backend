@@ -1,5 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 
+import swagger from 'swagger-ui-express';
+
 // Security
 import cors from 'cors';
 import helmet from 'helmet';
@@ -10,24 +12,36 @@ import router from '../routes';
 // * Create express application
 const server: Express = express();
 
-// Static Server
-server.use(express.static('public'));
-
-// http://localhost:8000/api...
-server.use('/api', router);
-
-// * Mongoose connection
-
 // * Security Config
 server.use(helmet());
 server.use(cors());
 server.use(express.json({ limit: '50mb' }));
 server.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
+
+// Static Server
+server.use(express.static('public'));
+
+// * Swagger Config and Route
+server.use('/docs', swagger.serve, swagger.setup(undefined, {
+  swaggerOptions: {
+    url: '/swagger.json',
+    explorer: true
+  }
+}));
+
+// http://localhost:8000/api...
+server.use('/api', router);
+
+// * Mongoose connection
+
+
+
 // * Redirect to "/api"
 server.get('/', (req: Request, res: Response) => {
   res.redirect('/api');
 });
+
 
 export default server;
 
