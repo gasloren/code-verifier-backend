@@ -6,6 +6,23 @@
 		"requestBodies": {},
 		"responses": {},
 		"schemas": {
+			"GoodbyeResponse": {
+				"properties": {
+					"date": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"date",
+					"message"
+				],
+				"type": "object",
+				"description": "Goodbye JSON response for Controllers"
+			},
 			"BasicResponse": {
 				"properties": {
 					"message": {
@@ -34,6 +51,39 @@
 	},
 	"openapi": "3.0.0",
 	"paths": {
+		"/api/goodbye": {
+			"get": {
+				"operationId": "GetMessageAndDate",
+				"responses": {
+					"200": {
+						"description": "Promise of GoodbyeResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GoodbyeResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "Endpoint to retrieve a \"goodbye {name}\" with de date {Date} in JSON",
+				"tags": [
+					"GoodbyeController"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Name of user to be greeted",
+						"in": "query",
+						"name": "name",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
 		"/api/hello": {
 			"get": {
 				"operationId": "GetMessage",

@@ -2,12 +2,13 @@ import express, { Express, Request, Response } from 'express';
 
 import swagger from 'swagger-ui-express';
 
-// Security
+// * Security
 import cors from 'cors';
 import helmet from 'helmet';
 
-// Routes
+// * Routes
 import router from '../routes';
+// import mongoose from 'mongoose';
 
 // * Create express application
 const server: Express = express();
@@ -19,7 +20,7 @@ server.use(express.json({ limit: '50mb' }));
 server.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 
-// Static Server
+// * Static Server
 server.use(express.static('public'));
 
 // * Swagger Config and Route
@@ -30,11 +31,11 @@ server.use('/docs', swagger.serve, swagger.setup(undefined, {
   }
 }));
 
-// http://localhost:8000/api...
+// * API routes -> http://localhost:8000/api...
 server.use('/api', router);
 
 // * Mongoose connection
-
+// mongoose.connect('')
 
 
 // * Redirect to "/api"

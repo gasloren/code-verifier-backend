@@ -4,8 +4,8 @@ import { IHelloController } from './interfaces';
 import { LogSuccess } from '../utils/logger';
 
 
-@Route("/api/hello")
-@Tags("HelloController")
+@Route('/api/hello')
+@Tags('HelloController')
 export class HelloController implements IHelloController {
 
   /**
@@ -13,7 +13,7 @@ export class HelloController implements IHelloController {
    * @param { string | undefined } name Name of user to be greeted 
    * @returns { BasicResponse } Promise of BasicResponse
    */
-  @Get("/")
+  @Get('/')
   public async getMessage(@Query()name?: string): Promise<BasicResponse> {
     LogSuccess('[/api/hello] Get Request');
     return {
