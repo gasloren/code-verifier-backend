@@ -1,4 +1,5 @@
 import express, { Express, Request, Response } from 'express';
+import mongoose from 'mongoose';
 
 import swagger from 'swagger-ui-express';
 
@@ -8,7 +9,7 @@ import helmet from 'helmet';
 
 // * Routes
 import router from '../routes';
-// import mongoose from 'mongoose';
+
 
 // * Create express application
 const server: Express = express();
@@ -35,7 +36,7 @@ server.use('/docs', swagger.serve, swagger.setup(undefined, {
 server.use('/api', router);
 
 // * Mongoose connection
-// mongoose.connect('')
+mongoose.connect('mongodb://localhost:27017/codeverification');
 
 
 // * Redirect to "/api"

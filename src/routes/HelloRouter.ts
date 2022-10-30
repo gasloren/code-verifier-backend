@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 
 import { LogInfo } from '../utils/logger';
 
-import { IHelloController } from '@/controller/interfaces';
+import { IHelloController } from '../controller/interfaces';
 import { HelloController } from '../controller/HelloController';
 
 

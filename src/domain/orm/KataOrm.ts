@@ -1,6 +1,6 @@
-import { KataEntity } from "../entities/KataEntity";
+import { KataEntity } from '../entities/KataEntity';
 
-import { LogSuccess, LogError } from "@/utils/logger";
+import { LogSuccess, LogError } from '../../utils/logger';
 
 // CRUD
 

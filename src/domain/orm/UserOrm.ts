@@ -1,6 +1,6 @@
-import { UserEntity } from "../entities/UserEntity";
+import { UserEntity } from '../entities/UserEntity';
 
-import { LogSuccess, LogError } from "@/utils/logger";
+import { LogSuccess, LogError } from '../../utils/logger';
 
 // CRUD
 
